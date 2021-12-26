@@ -1,0 +1,50 @@
+package Fun;
+import java.util.Scanner;
+
+public class ATM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		invalid();
+		recipt();
+
+	}
+
+	public static void recipt() {
+		System.out.println("Thank you for your deposit.");
+		
+	}
+	public static void invalid() {
+		
+		
+		int Deposit = 1;
+		int Withdrawal = 2;
+		
+		double choice;
+		double money;
+		double depositAmount;
+		double withdrawal10;
+		double withdrawal20;
+		double withdrawal50;
+		
+		
+		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("welcome to Chase bank.");
+		System.out.println("Please select an option below");
+		System.out.println("1- Deposit");
+		System.out.println("2- Withdrawal");
+		choice = keyboard.nextDouble();
+		
+		
+		if(choice == 1) {
+			Scanner keyboard1 = new Scanner(System.in);
+			System.out.println("How much would you like to deposit?");
+			depositAmount = keyboard1.nextDouble();
+			recipt();
+			
+		}
+	}
+	
+}
