@@ -1,4 +1,6 @@
-package Fun;
+package finalproject;
+
+
 import java.util.Scanner;
 
 public class ATM {
@@ -7,7 +9,7 @@ public class ATM {
 		// TODO Auto-generated method stub
 
 		invalid();
-		recipt();
+	
 
 	}
 
@@ -20,13 +22,12 @@ public class ATM {
 		
 		int Deposit = 1;
 		int Withdrawal = 2;
+	
 		
 		double choice;
 		double money;
 		double depositAmount;
-		double withdrawal10;
-		double withdrawal20;
-		double withdrawal50;
+		double withdrawalAmount;
 		
 		
 		
@@ -42,9 +43,18 @@ public class ATM {
 			Scanner keyboard1 = new Scanner(System.in);
 			System.out.println("How much would you like to deposit?");
 			depositAmount = keyboard1.nextDouble();
-			recipt();
-			
+			System.out.print("Thank you fopr your deposit");
 		}
+			else if (choice == 2) {
+			Scanner keyboard2 = new Scanner(System.in);	
+			System.out.println("How much would you like to Withdrawal");
+			System.out.println("$10");
+			System.out.println("$20");
+			System.out.println("$50");
+			withdrawalAmount = keyboard.nextDouble();
+			System.out.print("Getting your money now please wait");
+			}
+		
 	}
 	
-}
+	}
