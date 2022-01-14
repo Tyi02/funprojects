@@ -1,9 +1,9 @@
-package finalproject;
+package ATM;
 
 
 import java.util.Scanner;
 
-public class ATM {
+public class ATM_project {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,49 +12,90 @@ public class ATM {
 	
 
 	}
-
-	public static void recipt() {
-		System.out.println("Thank you for your deposit.");
+	
+	public static void choice1() {
 		
+		double depositAmount;
+		
+		
+		Scanner keyboard1 = new Scanner(System.in);
+		System.out.println("Please type the amount you would like to deposit?");
+		System.out.println("0- Go back");
+		depositAmount = keyboard1.nextDouble();
+			
+		
+		if(depositAmount == 0) {
+			invalid();
+			
+		}
+		else if(depositAmount > 0) {
+			System.out.print("Thank you for your deposit.");
+		}
+		else if(depositAmount < 0) {
+			System.out.println("invalid amount, please type in a valid amount you would like to deposit.");
+			choice1();
+		}
 	}
+	
+	 public static void choice2() {
+			
+			double withdrawalAmount;
+		
+			
+			Scanner keyboard2 = new Scanner(System.in);	
+			System.out.println("How much would you like to Withdrawal?");
+			System.out.println("$10");
+			System.out.println("$20");
+			System.out.println("$50");
+			withdrawalAmount = keyboard2.nextDouble();
+		
+			
+			if ( withdrawalAmount == 10 || withdrawalAmount == 20 || withdrawalAmount == 50 ) {
+				System.out.println("Getting your money now please wait.");	
+				
+			}
+			
+			else if(withdrawalAmount != 10 || withdrawalAmount != 20 || withdrawalAmount != 50) {
+				System.out.println("Invalid amount, please chose the given amounts below.");
+				choice2();
+			}
+		}
+
+
 	public static void invalid() {
 		
 		
 		int Deposit = 1;
 		int Withdrawal = 2;
-	
-		
 		double choice;
-		double money;
-		double depositAmount;
-		double withdrawalAmount;
-		
 		
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("welcome to Chase bank.");
-		System.out.println("Please select an option below");
+		System.out.println("Please select an option below.");
 		System.out.println("1- Deposit");
 		System.out.println("2- Withdrawal");
+		System.out.println("3- Cancel");
 		choice = keyboard.nextDouble();
 		
 		
 		if(choice == 1) {
-			Scanner keyboard1 = new Scanner(System.in);
-			System.out.println("How much would you like to deposit?");
-			depositAmount = keyboard1.nextDouble();
-			System.out.print("Thank you fopr your deposit");
+			choice1();
 		}
-			else if (choice == 2) {
-			Scanner keyboard2 = new Scanner(System.in);	
-			System.out.println("How much would you like to Withdrawal");
-			System.out.println("$10");
-			System.out.println("$20");
-			System.out.println("$50");
-			withdrawalAmount = keyboard.nextDouble();
-			System.out.print("Getting your money now please wait");
+		
+		else if (choice == 2) {
+			choice2();
 			}
 		
+		else if (choice ==3) {
+			System.out.println("Thank you, come again.");
+			invalid();
+		}
+		 else if(choice < 1 || choice > 3  ) {
+			 System.out.print("Sorry invalid choice, please select one of the values given.");
+			 invalid();
+		 }
+			
 	}
 	
 	}
