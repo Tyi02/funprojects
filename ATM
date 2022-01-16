@@ -5,13 +5,7 @@ import java.util.Scanner;
 
 public class ATM_project {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		invalid();
 	
-
-	}
 	
 	public static void choice1() {
 		
@@ -25,7 +19,7 @@ public class ATM_project {
 			
 		
 		if(depositAmount == 0) {
-			invalid();
+			ATM_choice();
 			
 		}
 		else if(depositAmount > 0) {
@@ -62,7 +56,7 @@ public class ATM_project {
 		}
 
 
-	public static void invalid() {
+	public static void ATM_choice() {
 		
 		
 		int Deposit = 1;
@@ -89,13 +83,21 @@ public class ATM_project {
 		
 		else if (choice ==3) {
 			System.out.println("Thank you, come again.");
-			invalid();
+			ATM_choice();
 		}
 		 else if(choice < 1 || choice > 3  ) {
 			 System.out.print("Sorry invalid choice, please select one of the values given.");
-			 invalid();
+			 ATM_choice();
 		 }
 			
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ATM_choice();
+	
+
 	}
 	
 	}
