@@ -1,0 +1,55 @@
+package com.CSCI185;
+
+import java.sql.SQLOutput;
+import java.util.Random;
+
+/*
+1. make a class for a pokemon
+2. make variables
+    1. Type - pick a variable
+    2. name - pick variable
+    3. level - pick a variable
+    4. health - pick a variable
+    5. attack - pick a variable
+ */
+public class Pokemon {
+
+    public String type;
+    public String name;
+    public int level;
+    public int health;
+    public int attack;
+
+    public void writeOutput(){
+        System.out.println("Type:" + type);
+        System.out.println("Name:" + name);
+        System.out.println("Level:" + level);
+        System.out.println("Health:" + health);
+        System.out.println("Attack:" + attack);
+    }
+
+    public void flee(){
+        System.out.println(name + "tries to run away");
+    }
+    //make a void attack method
+    public void inflictDamage(){
+        int randomDamage = (int)(Math.random()*6)+3;
+
+
+        //37-45
+        int newRandom = (int)(Math.random()*9)+37;
+
+        /* the (int) cuts everything off after the decimal point
+        - 6 is the "range", anything * by Math.random() will give you the range depending on what you have
+       - + 3 will give you the starting range
+         */
+
+       // System.out.println(name + " " + "uses flamethrower.");
+        //System.out.println("Flamethrower did:"+ " " +attack+ " "+ type + " " + "damage.");
+        /* - % means it goes in the order the variables are placed in
+
+        */
+
+    System.out.printf("%s attacks opponent for %d %s damage ", name, (attack+randomDamage), type);
+    }
+}
